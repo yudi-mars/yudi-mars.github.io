@@ -1,0 +1,174 @@
+/* Original template inline styles, extracted without visual changes. */
+.tag-filter {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 16px auto 0;
+              justify-content: center;
+            }
+            .tag-btn {
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(17, 17, 17, 0.18);
+              background: rgba(251, 165, 36, 0.06);
+              color: #6e3519;
+              font-size: 13px;
+              cursor: pointer;
+              transition: all 0.2s;
+            }
+            .tag-btn:hover {
+              border-color: rgba(17, 17, 17, 0.36);
+              background: rgba(251, 165, 36, 0.1);
+              color: #6e3519;
+            }
+            .tag-btn.active {
+              background: #ad7020;
+              color: #fff;
+              border-color: rgba(17, 17, 17, 0.62);
+              box-shadow: 0 2px 8px rgba(173, 112, 32, 0.22);
+            }
+            .tag-count {
+              display: inline-block;
+              background: rgba(0,0,0,0.15);
+              color: inherit;
+              font-size: 11px;
+              font-weight: bold;
+              width: 18px;
+              height: 18px;
+              line-height: 18px;
+              border-radius: 50%;
+              text-align: center;
+              margin-left: 5px;
+              vertical-align: middle;
+            }
+            .tag-btn.active .tag-count {
+              background: rgba(255, 255, 255, 0.22);
+              color: #fff;
+            }
+            .tag-btn:not(.active) .tag-count {
+              background: rgba(251, 165, 36, 0.14);
+              color: #6e3519;
+            }
+            .publications-table tr[data-tags] > td {
+              border-top: 1px solid rgba(0, 0, 0, 0.14);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+              background: #fff;
+            }
+            .publications-table tr[data-tags] > td:first-child {
+              border-left: 1px solid rgba(0, 0, 0, 0.14);
+              border-radius: 8px 0 0 8px;
+            }
+            .publications-table tr[data-tags] > td:last-child {
+              border-right: 1px solid rgba(0, 0, 0, 0.14);
+              border-radius: 0 8px 8px 0;
+            }
+            .publications-table tr[data-tags][style*="lightyellow"] > td {
+              background: lightyellow;
+            }
+
+            /* 自定义复制提示框样式 */
+            .toast-message {
+              position: fixed;
+              top: var(--toast-y, 20px);
+              left: var(--toast-x, 50%);
+              transform: translate(-50%, -120%);
+              background: rgba(255, 255, 255, 0.8);
+              color: #333;
+              padding: 8px 16px;
+              border-radius: 20px;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+              z-index: 2000;
+              opacity: 0;
+              transition: all 0.3s ease;
+              pointer-events: none;
+              border: 1px solid rgba(0,0,0,0.05);
+            }
+            .toast-message.show {
+              opacity: 1;
+              transform: translate(-50%, -135%);
+            }
+          
+/* Content integration and narrow-screen fixes. The original stylesheet is unchanged. */
+body, * { cursor: url('images/icon/cursor.png'), auto; }
+a, a *, button, button *, summary { cursor: url('images/icon/cursor-pointer.png'), pointer !important; }
+.homepage { width: 100%; max-width: 800px; margin: 0 auto; }
+.profile-table, .experience-table { width: 100%; border: 0; border-spacing: 0; }
+.profile-copy { padding: 2.5%; width: 68%; vertical-align: middle; }
+.profile-photo { padding: 2.5%; width: 32%; vertical-align: middle; }
+.profile-photo img { width: 85%; max-width: 85%; height: auto; border-radius: 8px; }
+h1 { font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 28px; font-weight: normal; text-align: center; }
+h2 { font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 25px; font-weight: normal; text-decoration: underline; text-decoration-color: #fba524; margin: 20px 0 16px; }
+.bio-button { border: 0; background: none; font-size: 20px; margin-left: 5px; padding: 0; }
+.copy-email { border: 0; background: none; color: #777; font: inherit; font-size: 11px; padding: 0 3px; }
+.profile-divider { height: 1px; background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent); margin: 10px 0; }
+#news { width: 96%; margin-left: auto; margin-right: auto; }
+#news .news-entry { margin: 7px 0; line-height: 1.4; }
+.publications-table { width: 100%; border: 0; border-spacing: 0 16px; border-collapse: separate; }
+.paper-visual { padding: 20px; width: 30%; vertical-align: middle; }
+.paper-copy { padding: 20px; width: 70%; vertical-align: middle; }
+.paper-visual .one { width: 190px; max-width: 100%; height: 160px; display: flex; align-items: center; }
+.paper-visual img { width: 100%; height: auto; max-height: 160px; object-fit: contain; transition: transform .2s; }
+.paper-visual a:hover img { transform: scale(1.04); }
+.paper-title { font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin: 0 0 5px; color: #f49300; line-height: 1.4; }
+.paper-links { margin: 4px 0; }
+.paper-venue { color: #d00000; }
+.paper-description { margin-bottom: 0; line-height: 1.45; }
+.publication-count { font-size: 12px; color: #777; text-align: center; margin: 8px 0 0; }
+.publication-authors-shell .publication-authors-toggle:focus-visible { outline: 2px solid #ad7020; }
+/* Keep deferred components hidden even when responsive layouts set display. */
+[hidden] { display: none !important; }
+.additional-publications { margin: 18px 0; line-height: 1.5; }
+.publication-list-heading { margin: 24px 0 14px; color: #6e3519; font-size: 16px; font-weight: normal; }
+.publication-list-heading span { color: #777; font-size: 14px; }
+.additional-publications summary { color: #6e3519; }
+.additional-publications summary span { color: #777; }
+.additional-publications li { margin: 0 0 18px; padding-left: 4px; }
+.additional-publications li p { margin: 4px 0; }
+.experience-table td { padding: 12px 20px; vertical-align: middle; line-height: 1.5; }
+.experience-logo { width: 20%; }
+.institution-logo { box-sizing: border-box; width: 112px; height: 84px; padding: 8px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 4px; }
+.institution-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* These official wordmarks are white; use a dark backing, not a color filter. */
+.institution-logo.logo-on-blue { background: #123568; }
+.institution-logo.logo-on-burgundy { background: #811c21; }
+.screenshot-projects-track { grid-auto-columns: calc((100% - 16px) / 2); }
+.screenshot-project-card { text-decoration: none; }
+.screenshot-project-card img { object-fit: contain; background: white; }
+.screenshot-project-card p { color: #555; line-height: 1.45; font-size: 12px; font-weight: normal; }
+#tagcloud-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; }
+#tagcloud-container.cloud-ready { display: block; }
+.tagcloud-item { font-size: 18px; }
+.simple-list { width: 90%; margin: 20px auto 30px; padding-left: 20px; }
+.simple-list li { margin: 12px 0; }
+.section-drip-nav { right: auto; left: calc(50% + 430px); }
+.section-drip-nav a[aria-current]::before { background: #fba524; }
+.skip-link { position: fixed; top: -80px; left: 12px; padding: 10px; background: white; z-index: 100; }
+.skip-link:focus { top: 10px; }
+.toast-message { top: auto; bottom: 28px; transform: translate(-50%, 20px); max-width: calc(100vw - 60px); }
+.toast-message.show { transform: translate(-50%, 0); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #ad7020; outline-offset: 3px; }
+@media (max-width: 1150px) { .section-drip-nav { display: none; } }
+@media (max-width: 600px) {
+  .homepage { width: calc(100% - 16px); }
+  .profile-table, .profile-table tbody, .profile-table tr { display: block; }
+  .profile-copy { display: block; width: auto; padding: 12px; }
+  .profile-photo { display: block; width: auto; text-align: center; padding: 0 0 16px; }
+  .profile-photo img { width: 120px; }
+  .contact-links .email-link .contact-sub { max-width: 190px; }
+  .publications-table, .publications-table tbody { display: block; }
+  .publications-table tr { display: block; margin: 16px 0; }
+  .publications-table tr[data-tags] > td { display: block; width: auto; padding: 16px; }
+  .publications-table tr[data-tags] > td:first-child { border: 1px solid #0002; border-bottom: 0; border-radius: 8px 8px 0 0; }
+  .publications-table tr[data-tags] > td:last-child { border: 1px solid #0002; border-top: 0; border-radius: 0 0 8px 8px; }
+  .paper-visual .one { width: 100%; height: auto; justify-content: center; }
+  .paper-visual img { width: auto; max-width: 100%; max-height: 180px; }
+  .experience-table td { padding: 10px 8px; }
+  .institution-logo { width: 84px; height: 68px; padding: 5px; }
+  .screenshot-projects-track { grid-auto-columns: calc((100% - 8px) / 2); }
+  .tagcloud-item { font-size: 14px; }
+  .tag-btn { min-height: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
